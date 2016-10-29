@@ -8,7 +8,9 @@ import interfaces.UserServices;
 
 public class ServiciosUsuario implements UserServices{
 	
-	
+	public ServiciosUsuario(){
+		
+	}
 	//METODOS
 	
 	public void agregarAmigo(Usuario user, Usuario amigo) {
@@ -38,22 +40,22 @@ public class ServiciosUsuario implements UserServices{
 	}
 	
 	public void muestraPantallaPrinc(Datos datos,Usuario user){
-		System.out.println("Que desea hacer?");
-		int numero = 0;
-		switch(numero){
-		case 1:
-			modificarCuenta(user);
-		break;
-		case 2:
-			buscarUsuario(datos);
-			break;
-		case 3:
-			publicar(user);
-			break;
-		default :
-			System.out.println("NUMERO INVALIDO!!!");
-		}
-	}
+		  System.out.println("Que desea hacer?");
+		  Scanner s = new Scanner(System.in);
+		  Integer opcion = s.nextInt();
+		  System.out.println("Oprima 1 para MODIFICAR CUENTA"
+		            + "/n 2 para BUSCAR USUARIO "
+		            + "/n 3 PUBLICAR");
+		  if(opcion == 1){ 
+		   modificarCuenta(user);
+		   
+		  }else if(opcion == 2){ 
+		   buscarUsuario(datos);
+		  }else if (opcion == 3){
+		   publicar(user);
+		  }
+		  s.close();
+		 }
 		
 	public void login(Datos datos) {
 		Scanner s = new Scanner(System.in);

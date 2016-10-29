@@ -102,10 +102,26 @@ public class Usuario  implements Comparable<Usuario>{
 		this.solicitudes = solicitudes;
 	}
 	
-	@Override 
+	@Override
+	public String toString(){
+		return "Nombre: " + this.nombre + "||" +
+				"Edad: " + this.edad + "||" +
+				"Email: " + this.email + "/n";
+		
+	}
+
+	public int compareTo(Usuario o) {
+		if (this.nombre == o.getNombre() && this.email == o.getEmail()){
+			return 0;
+		}
+		return 1;
+		
+	}
+	
+	/*@Override 
 	public int compareTo(Usuario o){
 		if (this.nombre.compareTo(o.getNombre()) == 0){     //compara nombre
 			return this.pw.compareTo(o.getEmail());			//compara email
 		}
-	}
+	}*/
 }
